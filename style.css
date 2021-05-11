@@ -1,0 +1,94 @@
+html{
+    min-height: 100%;
+    min-width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+body{
+	font-family: Arial, Helvetica, sans-serif; 
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    min-width: 100%;
+    background-image: linear-gradient(to bottom right, #0A4DA6, #F25E3D, #F25244);
+}
+
+
+header h1{
+    margin: 60px 20px 30px 20px;
+    padding: 10px 30px;
+    color: #fff;
+    border: 5px solid;
+}
+
+.container #textInput {
+    border: 1px solid #fff;
+    border-radius: 3px;
+    height: 258px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding:10px;
+    background-color: #fff;
+    overflow-x: scroll;
+    /*overflow: scroll; Given scroll x and y*/
+    /*overflow:hidden;*/
+   }
+
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-text);
+    color:#888; /*Colour is white*/
+}/*To add the Text inside the text area*/
+
+#textInput:focus{
+    outline:none;
+} /*Removes the outline of the text editor*/
+
+.container #row-check{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#row-check button{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.container #select-font{
+    width: 150px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+    border-style: none;
+}
+
+.container #select-size{
+    width: 100px;
+    height: 40px;
+    border-radius: 3px;
+    border-style: none;
+}
+
+#word-row{
+    color: #fff;
+    margin-left: 45px;
+}
+
+#btn-right{
+    margin-right: 45px;
+}
+
+.colour{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;
+}
+
+.bottom-row{
+    margin-bottom: 100px;
+}

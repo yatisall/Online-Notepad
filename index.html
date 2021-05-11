@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Online Notepad | By Hayati Salleh</title>
+
+  <link type="text/css" rel="stylesheet" href="style.css"/> <!--Connect to style.css-->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> <!--Link for connecting to bootstrap-->
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> <!--Connect to CDN Font Awesome-->
+</head>
+
+<body>
+  <div class="container"> <!--start of container-->
+    <div class="row justify-content-center" align="center">
+      <header>
+        <h1>Online Notepad</h1>
+      </header>
+    </div>
+
+    <div class="row h-100 no-gutters justify-content-center" id="row-check"> <!--start on tools row-->
+          <button type="button" class="btn btn-outline-light" title="Bold" onclick="document.execCommand('bold');"><i class="fas fa-bold"></i></button>
+          <button type="button" class="btn btn-outline-light" title="Italic" onclick="document.execCommand('italic');"><i class="fas fa-italic"></i></button>
+          <button type="button" class="btn btn-outline-light" title="Underline" onclick="document.execCommand('underline');"><i class="fas fa-underline"></i></button>
+
+        <!-- font style start -->
+        <select id="select-font" class="input"  onchange="changeFont(this);">
+          <option value="Arial">Arial</option>
+          <option value="Helvetica">Helvetica</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Sans serif">Sans serif</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Palatino">Palatino</option>
+          <option value="Garamond">Garamond</option>
+          <option value="Comic Sans MS">Comic Sans MS</option>
+          <option value="Arial Black">Arial Black</option>
+          <option value="Tahoma">Tahoma</option>
+          <option value="Comic Sans MS">Comic Sans MS</option>
+        </select>
+        <!-- font style end-->
+
+        <!-- font size start -->
+        <select id="select-size" onchange="changeSize(this)">
+          <option value="1">1</option>    
+          <option value="2">2</option>
+          <option value="3" selected>3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <!--
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="14">14</option>
+          <option value="16">16</option>
+          <option value="18">18</option>
+          <option value="20">20</option>
+          <option value="22">22</option>-->
+        </select>
+        <!-- font size end -->
+
+        <!-- font colour start -->
+          <input class="colour" type="color" onchange="selectColour()" id="colour-picker">
+        <!-- font colour end -->
+
+        <button type="button" class="btn btn-outline-light" title="Strikethrough" onclick="document.execCommand('strikethrough');"><strikethrough></strikethrough><i class="fas fa-strikethrough"></i></button>
+        <button class="btn btn-outline-light" title="Align left" onclick="document.execCommand('justifyLeft');"><justifyLeft></justifyLeft><i class="fas fa-align-left"></i></button>
+        <button class="btn btn-outline-light" title="Justify center" onclick="document.execCommand('justifyCenter');"><justifyCenter></justifyCenter><i class="fas fa-align-justify"></i></button>
+        <button class="btn btn-outline-light" title="Align right" onclick="document.execCommand('justifyRight');"><justifyRight></justifyRight><i class="fas fa-align-right"></i></button>
+
+        <button class="btn btn-outline-light" title="Redo" onclick="document.execCommand('redo');"><redo></redo><i class="fas fa-redo"></i></button>
+        <button class="btn btn-outline-light" title="Undo" onclick="document.execCommand('undo');"><undo></undo><i class="fas fa-undo"></i></button>
+    </div> <!--end on tools row-->
+  </div> <!--end of container-->
+
+  <div class="container" id="second-container"> <!--start second container-->
+      <div class="row">
+        <div class="col">
+          <div id="textInput" oninput="countWord()" contenteditable="true" data-text="Please enter your text here...."></div>
+        </div>
+        <br>
+      </div>
+
+      <div class="row bottom-row" >
+          <div id="btn-left" class="col text-left"> <!--start on word counter-->
+            <label id="word-row">Word count: <span id="wordCount">0</span></label> 
+          </div> <!--end on word counter-->
+
+          <div id="btn-right" class="col text-right"> <!--start on localStorage-->
+            <button id="save_btn" type="button" class="btn btn-outline-light">Save</button>
+            <button id="load_btn" type="button" class="btn btn-outline-light">Load</button>
+            <button id="reset_btn" type="button" class="btn btn-outline-light">Reset</button>
+          </div> <!--end on localStorage-->
+      </div>
+    </div> <!--end second container-->
+
+  <script type="text/javascript" src="main.js"></script> <!--Connect to main.js-->
+</body>
+</html>
